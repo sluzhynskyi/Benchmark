@@ -24,7 +24,23 @@ int main(int argc, char **argv) {
     }
 
     auto s = best(in);
-    cout << s << endl;
+
+
+    int symbols = 0;
+    for(auto ch:s){
+        if(!std::isspace(ch)){
+            symbols+=1;
+        }
+    }
+//    std::ofstream out;
+//    out.open(file_out, ios::out);
+    std::ofstream out(file_out);
+    if (!out) {
+        cerr << "Error opening file" << endl;
+        return 1;
+    }
+    out<<symbols;
+
     return 0;
 
 }

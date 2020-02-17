@@ -15,6 +15,12 @@ std::string best(std::ifstream &in) {
     return ss.str();
 };
 
+
+std::string using_iterators(std::ifstream &in) {
+     return std::string{std::istreambuf_iterator<char>{in},
+                        std::istreambuf_iterator<char>{}};
+}
+
 template<typename CharT, typename Traits, typename Allocator = std::allocator<CharT>>
 static auto read_stream_into_string(std::basic_istream<CharT, Traits> &in, Allocator alloc = {}) {
     std::basic_ostringstream<CharT, Traits, Allocator>
