@@ -23,6 +23,23 @@ int main(int argc, char **argv) {
         return 1;
     }
 
+    std::string method_description;
+    std::string s;
+    switch(method_ind){
+        case 1:
+            method_description = "ss<<in.rdbuf()";
+            s = best(in);
+            break;
+        case 2:
+            method_description = "istreambuf_iterator{in}";
+            s = using_iterators(in);
+            break;
+        case 3:
+            method_description = "Method 3";
+            break;
+        default:
+            std::cout<<"invalid method name!";
+    }
     auto s = best(in);
 
 
