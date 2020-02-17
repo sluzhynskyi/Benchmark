@@ -7,7 +7,7 @@
 #include <fstream>
 #include "functions.h"
 
-std::string best(std::ifstream in) {
+std::string best(std::ifstream &in) {
     auto ss = std::ostringstream{};
     if (!(ss << in.rdbuf())) {
         throw std::ios_base::failure{"error"};
