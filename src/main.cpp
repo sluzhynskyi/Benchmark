@@ -52,11 +52,11 @@ int main(int argc, char **argv) {
             s = using_iterators(in);
             break;
         case 3:
-            method_description = "Method 3";
-            s = read_file_into_memory(in);
+            method_description = "For large files method";
+            s = for_large_files(in);
             break;
         default:
-            std::cout<<"invalid method name!";
+            std::cout<<"invalid method name!"<<endl;
     }
     auto duration = get_current_time_fenced() - starting_time;
 
