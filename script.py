@@ -28,6 +28,7 @@ if __name__ == "__main__":
         open(args.in_file).close()
     except FileNotFoundError:
         print("Input file not found!")
+        quit(-1)
     # Create or clear output file
     open(args.out_file, "w").close()
 
