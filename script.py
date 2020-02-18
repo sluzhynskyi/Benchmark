@@ -26,5 +26,6 @@ if __name__ == "__main__":
         print("Input file not found!")
     
     for method in range(NUM_METHODS):
-        with subprocess.Popen(f"build/Benchmark.exe {args.num_runs} {args.in_file} {args.out_file}", stdin=subprocess.PIPE) as prog:
-            print(prog.stdin.read().split())
+        with subprocess.Popen(f"build/Benchmark.exe {method+1} {args.in_file} {args.out_file}", stdout=subprocess.PIPE) as prog:
+            output = prog.stdout.read()
+            print(output)
